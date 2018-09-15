@@ -56,9 +56,9 @@ There are different kinds of shortcuts, start with different prefix:
 
 | Prefix | Prefix name | Example | Description | More info |
 | ------ | ----------- | ------- | ----------- |-- |
-| `space` | `[SPC]`     | `spc f t` | open/close filetree             | just click space key|
+| `space` | `[SPC]`     | `spc f t` | open/close filetree             | just click space key and wait 1s|
 | `s`     | `[WIN]`     | `s v`     | split window, equal to `:split` |[link](https://spacevim.org/documentation/#window-manager) |
-| `\`     | `<Leader>`  | `\ [0-9]` | jump to other tab or buffer     | just click `\` key|
+| `\`     | `<Leader>`  | `\ [0-9]` | jump to other tab or buffer     | just click `\` key and wait 1s|
 | `g`     | go to      | `g 0`     | go to first tab                 |[link](https://spacevim.org/documentation/#commands-starting-with-g)|
 | `z`     | fold | `z a` | toggle a fold | [link](https://spacevim.org/documentation/#commands-starting-with-z)
 
@@ -139,7 +139,7 @@ blew starts with `s` and `q` won't work.
 | `spc s p`        | Searching in current proj, equal to `spc /`            |
 
 
-### 2. Advanced shortcuts
+### 2. Advanced setting
 
 #### (1) Programming language support
 Use spacevim as a specific language IDE, take `python` for example.
@@ -179,12 +179,11 @@ we use unite as a fuzzy finder, to enable it, add following snippet to
 
 and in terminal
 
-   sudo apt-get install silversearcher-ag
+    sudo apt-get install silversearcher-ag
 
 Then disable `ctrl-s` in linux terminal , stick `stty -ixon` in a startup script(`~/.bashrc`). 
-To allow `ctrl-s` to get things flowing again, use `stty ixany`.
 
-Finally, in spacevim
+Finally, in spacevim type, you can fuzzy search file in current directory now!
 
     spc f f
 
