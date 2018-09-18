@@ -1,4 +1,4 @@
-# 10 minutes to SpaceVim (for linux user)(Attention: this tutorial is not finished)
+# 10 minutes to SpaceVim (for linux user)(TODO)
 The main purpose of this tutorial is quickly introducing spacevim to new 
 beginners. Also, for old vimer, it won't hurt to try, you can easily and safely
 get back to your original vim if you don't like spacevim.
