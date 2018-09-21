@@ -85,16 +85,20 @@ As you could see above, spacevim's shortcuts are confict with origin vim's
 shortcuts such as shortcuts start with `s` and `g`, if you want to use origin
 vim key bindings, you can enable vimcompatible mode, add 
 
-    [[options]]
-    vimcompatible = true
+```toml
+[options]
+  vimcompatible = true
+```
 
 to `.SpaceVim.d/init.toml`
 
 Spacevim's default file tree plugin is `vimfiler`, for those who used to using
 `nerdtree` plugin to explore file, set 
 
-    [[options]]
-		filemanager = "nerdtree"
+```toml
+[options]
+  filemanager = "nerdtree"
+```
 
 
 ## Third Step: Getting start!
@@ -147,8 +151,10 @@ for other programming language, please view [SpaceVim layers](https://spacevim.o
 
 Add following snippet to `.SpaceVim.d/init.toml`
 
-    [[layers]]
-	  name = "lang#python"
+```toml
+[[layers]]
+  name = "lang#python"
+```
 
 Install dependencies
 
@@ -174,8 +180,10 @@ See [Fuzzy finder](https://spacevim.org/documentation/#fuzzy-finder). For exampl
 we use unite as a fuzzy finder, to enable it, add following snippet to 
 `.SpaceVim.d/init.toml`
 
-    [[layers]]
-    name = "unite"
+```toml
+[[layers]]
+  name = "unite"
+```
 
 and in terminal
 
