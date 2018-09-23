@@ -106,7 +106,6 @@ Spacevim's default file tree plugin is `vimfiler`, for those who used to using
   filemanager = "nerdtree"
 ```
 
-
 ## Third Step: Getting start!
 
 ### 1. The most frequently used shortcuts
@@ -229,12 +228,16 @@ Finally, in spacevim type, you can fuzzy search file in current directory now!
 
 You may want to set `default_indent` to 4, edit `~/.SpaceVim.d/init.toml`
 
-    [options]
-    default_indent = 4
+```toml
+[options]
+  default_indent = 4
+```
 
 Actually it is  equivalent to set `~/.SpaceVim/autoload/SpaceVim.vim` to:
 
+```vim
     let g:spacevim_default_indent = 4
+```
 
 Two way are the same except the second way need prefix `let g:spacevim_`
 
@@ -247,14 +250,18 @@ All SpaceVim options can be found in `:h SpaceVim-config` or the file `~/.SpaceV
 if you want to `set wrap` (automatic line breaking) every time you open SpaceVim,
 first, add a newfile `.SpaceVim.d/autoload/myspacevim.vim` which contains:
 
-    func! myspacevim#before() abort
-      set wrap
-    endf
+```vim
+func! myspacevim#before() abort
+  set wrap
+endf
+```
 
 add below code to `~/.SpaceVim.d/init.toml`
 
-    [options]
-    bootstrap_before = "myspacevim#before"
+```toml
+[options]
+  bootstrap_before = "myspacevim#before"
+```
 
 Replace `before` to `after` if you want your function being called after the loading of SpaceVim’s main scripts
 

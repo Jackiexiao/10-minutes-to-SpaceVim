@@ -54,11 +54,11 @@ SpaceVim中有非常多的快捷键，最常用的快捷键是`空格键`，我�
 
 | Prefix  | Prefix name | Example   | Description                     | More info                                                            |
 | ------- | ----------- | --------- | ------------------------------- | -------------------------------------------------------------------- |
-| `space` | `[SPC]`     | `spc f t` | open/close filetree             | just press space key and wait 1s                                     |
-| `s`     | `[WIN]`     | `s v`     | split window, equal to `:split` | [link](https://spacevim.org/documentation/#window-manager)           |
-| `\`     | `<Leader>`  | `\ [0-9]` | jump to other tab or buffer     | just press `\` key and wait 1s                                       |
-| `g`     | go to       | `g 0`     | go to first tab                 | [link](https://spacevim.org/documentation/#commands-starting-with-g) |
-| `z`     | fold        | `z a`     | toggle a fold                   | [link](https://spacevim.org/documentation/#commands-starting-with-z) |
+| `space` | `[SPC]`     | `spc f t` | 打开/关闭 文件浏览器| just press space key and wait 1s                                     |
+| `s`     | `[WIN]`     | `s v`     | 水平分割窗口，等价于`:split` | [link](https://spacevim.org/documentation/#window-manager)           |
+| `\`     | `<Leader>`  | `\ [0-9]` | 跳到其他tab（页面）或buffer（缓存）| just press `\` key and wait 1s                                       |
+| `g`     | go to       | `g 0`     | 跳到第一个tab                 | [link](https://spacevim.org/documentation/#commands-starting-with-g) |
+| `z`     | fold        | `z a`     | 触发代码折叠 | [link](https://spacevim.org/documentation/#commands-starting-with-z) |
 
 进入spacevim后，按一下空格键，等待1秒，你可以看到有用的提示信息，通过这些
 信息来浏览一下spacevim的更多快捷键吧。
@@ -83,8 +83,10 @@ SpaceVim中有非常多的快捷键，最常用的快捷键是`空格键`，我�
 SpaceVim 有些快捷键是和原生vim冲突的，例如`s` 和`g`，如果你想使用原生vim的配置，
 在`~/.SpaceVim.d/init.toml`中加入
 
-    [[options]]
-    vimcompatible = true
+```toml
+[options]
+  vimcompatible = true
+```
 
 更多vim兼容模式信息请查看
 [vimCompatible mode](https://spacevim.org/documentation/#vim-compatible-mode)
@@ -93,9 +95,10 @@ SpaceVim 有些快捷键是和原生vim冲突的，例如`s` 和`g`，如果你�
 SpaceVim默认使用`vimfiler`，你可能更喜欢用`nerdtree`，同样，
 在`~/.SpaceVim.d/init.toml`中加入
 
-    [[options]]
-    filemanager = "nerdtree"
-
+```toml
+[options]
+  filemanager = "nerdtree"
+```
 
 ## 三、开始尝试
 
@@ -151,8 +154,10 @@ SpaceVim默认使用`vimfiler`，你可能更喜欢用`nerdtree`，同样，
 
 在`~/.SpaceVim.d/init.toml`中加入
 
-    [[layers]]
-	  name = "lang#python"
+```toml
+[[layers]]
+  name = "lang#python"
+```
 
 安装依赖
 
@@ -178,8 +183,10 @@ SpaceVim默认使用`vimfiler`，你可能更喜欢用`nerdtree`，同样，
 
 这里使用`unite`作为例子，在`~/.SpaceVim.d/init.toml`中加入
 
-    [[layers]]
-    name = "unite"
+```toml
+[[layers]]
+  name = "unite"
+```
 
 在终端中
 
@@ -211,51 +218,60 @@ SpaceVim默认使用`vimfiler`，你可能更喜欢用`nerdtree`，同样，
 ### 1. 自定义
 #### (1) Config `~/.SpaceVim.d/init.toml`
 
-You may want to set `default_indent` to 4, edit `~/.SpaceVim.d/init.toml`
+你可能想让默认的缩进为4个空格，那么在`~/.SpaceVim.d/init.toml`中加入
 
-    [options]
-    default_indent = 4
+```toml
+[options]
+  default_indent = 4
+```
 
-Actually it is  equivalent to set `~/.SpaceVim/autoload/SpaceVim.vim` to:
+实际上，上面的修改等价于在`~/.SpaceVim/autoload/SpaceVim.vim`中修改
 
+```vim
     let g:spacevim_default_indent = 4
+```
+两种方式效果是一样的，只不过第一种多了前缀 `let g:spacevim_`
 
-Two way are the same except the second way need prefix `let g:spacevim_`
-
-All SpaceVim options can be found in `:h SpaceVim-config` or the file `~/.SpaceVim/autoload/SpaceVim.vim`
+所以可设置的Spacevim选项可以在`:h SpaceVim-config` 或者文件`~/.SpaceVim/autoload/SpaceVim.vim`中找到
 
 #### (2) [Add your own vim script: bootstrap-functions](https://spacevim.org/documentation/#bootstrap-functions)
 
 **举例说明如何使用`bootstrap-functions`**
 
-if you want to `set wrap` (automatic line breaking) every time you open SpaceVim,
-first, add a newfile `.SpaceVim.d/autoload/myspacevim.vim` which contains:
+比如你想要每次vim启动的时候都自动换行`set wrap`，首先，新建一个文件
+`.SpaceVim.d/autoload/myspacevim.vim`，在里面添加如下内容
 
-    func! myspacevim#before() abort
-      set wrap
-    endf
+```vim
+func! myspacevim#before() abort
+  set wrap
+endf
+```
 
-add below code to `~/.SpaceVim.d/init.toml`
+然后在`~/.SpaceVim.d/init.toml`中添加
 
-    [options]
-    bootstrap_before = "myspacevim#before"
+```toml
+[options]
+  bootstrap_before = "myspacevim#before"
+```
 
-Replace `before` to `after` if you want your function being called after the loading of SpaceVim’s main scripts
+将`before` 替换为 `after`如果你想要你自定义的函数在spacevim主脚本运行后再运行。
 
-(OK, I know it's a bit inconvenient.)
+好吧，我知道上述的步骤有些麻烦。
 
 #### (3) [Change your colorschemes](https://spacevim.org/documentation/#colorschemes)
 
 ### 2. 探索
-1. Learn more about SpaceVim, please view [Official document](https://spacevim.org/documentation/)
-2. Get more useful tool for your spacevim [Available layers](https://spacevim.org/layers/)
-3. Check FAQ first if you have any problem [Frequently asked questions FAQ](https://spacevim.org/faq/)
+1. 更详细更全面的官方文档 [Official document](https://spacevim.org/cn/documentation/)
+2. SpaceVim的扩展组件 [Available layers](https://spacevim.org/cn/layers/)
+3. 如果你有问题，不妨先看一下[Frequently asked questions FAQ](https://spacevim.org/cn/faq/)
+
+需要注意的是，官方文档中，中文版本相对英文版本部分地方可能会有些过时。
 
 ### 3. 更多
 1. 更新SpaceVim `:SPUpdate`
-2. SpaceVim debug 信息`SPDebugInfo!` or `spc h I`, this is useful if you want 
-to report bugs or open a github issue
+2. SpaceVim debug 信息`SPDebugInfo!` or `spc h I`, 如果你想要提交一个issue，这将会很有帮助
+
 
 ## 参考
-1. [Spacevim tutorial (writen in Chinese)](https://everettjf.gitbooks.io/spacevimtutorial/content/install/4.html)
+1. [Spacevim tutorial 中文](https://everettjf.gitbooks.io/spacevimtutorial/content/install/4.html)
 2. [Hack-SpaceVim](https://github.com/Gabirel/Hack-SpaceVim)
