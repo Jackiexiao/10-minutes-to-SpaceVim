@@ -41,8 +41,8 @@ See [FAQ:Have a try with SpaceVim without overwrite vimrc?](https://spacevim.org
 **强烈建议:**
 
 更新你的vim到
-[vim8.0](http://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/) 
-或者 [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+[neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)(neovim体验更好)
+或者 [vim8.0](http://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/) 
 以便有更好的SpaceVim体验
 
 ## 二、基本概念
