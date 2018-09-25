@@ -43,9 +43,9 @@ information about install script, type
 **Strong Suggestion:**
 
 Update your vim to 
-[vim8.0](http://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/) 
-or [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-to get better experience of spacevim
+[neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)(generally speaking, neovim is better)
+or [vim8.0](http://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/) 
+to get better experience of spacevim.
 
 ## Second Step: Basic idea
 There are many shortcuts key in SpaceVim, the most frequently used shortcut 
