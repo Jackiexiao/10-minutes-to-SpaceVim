@@ -134,7 +134,6 @@ Be carefully, if you use vim compatible mode, in vim normal mode, the following 
 | `spc c p/P`      | comment/uncomment current paragraph                             |
 | `spc ; [num] j`  | comment *num* lines                                             |
 | Tab Manager      | [Link](https://spacevim.org/documentation/#tabline)             |
-| `spc t t`        | open tab manager                                                |
 | `spc w F`        | open a new tab, equal to `spc t t + n`                          |
 | `spc w o`        | switch tab                                                      |
 | Display          | [Link](https://spacevim.org/documentation/#ui-toggles)          |
